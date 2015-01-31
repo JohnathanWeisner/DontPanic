@@ -27,7 +27,7 @@
     "contentSettings",
     "history",
     "notifications",
-    "www.github.com"
+    "https://github.com/*"
   ],
   "content_scripts": [
     {
