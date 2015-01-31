@@ -1,0 +1,10 @@
+{
+  "name": "Infinite Probability Drive",
+  "content_scripts": [
+    {
+      "matches": ["http://*.github.com/*"],
+      "css": ["infinite.css"],
+      "js": ["infinite.js"]
+    }
+  ]
+}
