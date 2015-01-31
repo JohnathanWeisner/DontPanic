@@ -11,3 +11,7 @@ chrome.extension.onMessage.addListener(
   	chrome.pageAction.show(sender.tab.id);
     sendResponse();
   });
+
+// chrome.browserAction.onClicked.addListener(function(tab) {
+//     chrome.tabs.executeScript(tab.id, {file: "js/test.js"});
+// });
