@@ -1,17 +1,14 @@
-// if you checked "fancy-settings" in extensionizr.com, uncomment this lines
+Firebase.enableLogging(true);
+var f = new Firebase('https://inifinitidrive.firebaseio.com/');
 
-// var settings = new Store("settings", {
-//     "sample_setting": "This is how you use Store.js to remember values"
-// });
+var requests = f.child("requests")
 
+var output = 0
 
-//example of using a message handler from the inject scripts
-chrome.extension.onMessage.addListener(
-  function(request, sender, sendResponse) {
-  	chrome.pageAction.show(sender.tab.id);
-    sendResponse();
-  });
-
-// chrome.browserAction.onClicked.addListener(function(tab) {
-//     chrome.tabs.executeScript(tab.id, {file: "js/test.js"});
-// });
+requests.limit(100).on('child_added', function(req) {
+	request = req.val()
+    if (!(request.done)){
+    	output += 1
+    };
+	chrome.browserAction.setBadgeText({text: output.toString()})
+});
