@@ -13,7 +13,8 @@
   "background": {
     "scripts": [
     "src/browser_action/jquery.min.js",
-      "src/bg/background.js"
+    "js/firebase.js",
+    "src/bg/background.js"
     ],
     "persistent": true
   },
@@ -25,7 +26,7 @@
     "default_popup": "src/browser_action/browser_action.html"
   },
   "permissions":
-    [
+  [
     "tabs",
     "contentSettings",
     "history",
